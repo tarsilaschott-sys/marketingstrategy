@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligent Investing — Marketing Strategy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black:     #000000;
+      --surface-1: #1C1C1C;
+      --surface-2: #232627;
+      --border:    #3F3F46;
+      --muted:     #565B5E;
+      --secondary: #929292;
+      --light:     #C7C7C7;
+      --white:     #FFFFFF;
+      --accent:    #FFD84D;
+      --accent-soft: rgba(255, 216, 77, 0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-mark {
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+    }
+
+    .nav-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--secondary);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    /* ── LAYOUT ── */
+    main { padding-top: 56px; }
+
+    section {
+      padding: 96px 48px;
+      border-bottom: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section:last-child { border-bottom: none; }
+
+    /* ── COVER ── */
+    .cover {
+      min-height: calc(100vh - 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 96px 48px;
+      border-bottom: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cover-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--secondary);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .cover-mark {
+      font-size: clamp(80px, 12vw, 160px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -6px;
+      line-height: 0.9;
+      margin-bottom: 48px;
+    }
+
+    .cover-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      max-width: 640px;
+      margin-bottom: 64px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cover-meta-item { display: flex; flex-direction: column; gap: 6px; }
+
+    .cover-meta-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .cover-meta-value {
+      font-size: 13px;
+      color: var(--secondary);
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-number {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0;
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    h3:first-of-type { margin-top: 0; }
+
+    p {
+      color: var(--light);
+      margin-bottom: 16px;
+      max-width: 680px;
+      line-height: 1.75;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: var(--white); font-weight: 500; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--accent-soft);
+      border-left: 2px solid var(--accent);
+      padding: 20px 24px;
+      margin: 32px 0;
+      max-width: 680px;
+    }
+
+    .callout p {
+      color: var(--light);
+      margin: 0;
+      font-style: italic;
+    }
+
+    .callout strong { color: var(--accent); }
+
+    /* ── TENSION BLOCK ── */
+    .tension {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin: 32px 0;
+      max-width: 680px;
+    }
+
+    .tension-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .tension p { color: var(--secondary); max-width: 100%; }
+
+    /* ── GRID CARDS ── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    .card {
+      background: var(--black);
+      padding: 28px 24px;
+    }
+
+    .card-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--secondary);
+      line-height: 1.65;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin-top: 16px;
+    }
+
+    .tag-primary { background: var(--accent); color: var(--black); }
+    .tag-secondary { background: var(--surface-1); color: var(--secondary); border: 1px solid var(--border); }
+
+    /* ── TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 13px;
+    }
+
+    thead tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      text-align: left;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 0 16px 16px 0;
+    }
+
+    td {
+      color: var(--light);
+      padding: 14px 16px 14px 0;
+      vertical-align: top;
+      border-bottom: 1px solid var(--surface-2);
+      line-height: 1.5;
+    }
+
+    td:first-child { color: var(--white); font-weight: 500; }
+
+    tr:last-child td { border-bottom: none; }
+
+    /* ── FUNNEL ── */
+    .funnel {
+      margin: 40px 0;
+      max-width: 520px;
+    }
+
+    .funnel-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--surface-2);
+      position: relative;
+    }
+
+    .funnel-step:last-child { border-bottom: none; }
+
+    .funnel-num {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 2px;
+      min-width: 32px;
+      padding-top: 2px;
+    }
+
+    .funnel-content { flex: 1; }
+
+    .funnel-stage {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .funnel-desc {
+      font-size: 13px;
+      color: var(--secondary);
+      line-height: 1.5;
+    }
+
+    .funnel-channel {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ── PIPELINE ── */
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin: 32px 0;
+      background: var(--border);
+    }
+
+    .pipeline-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .pipeline-week {
+      background: var(--black);
+      padding: 24px 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    .pipeline-week:last-child { border-right: none; }
+
+    .pipeline-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pipeline-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .pipeline-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pipeline-items li {
+      font-size: 12px;
+      color: var(--secondary);
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .pipeline-items li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    /* ── LIST ── */
+    ul.doc-list {
+      list-style: none;
+      margin: 16px 0 24px;
+      max-width: 640px;
+    }
+
+    ul.doc-list li {
+      font-size: 14px;
+      color: var(--light);
+      padding: 10px 0;
+      padding-left: 20px;
+      position: relative;
+      border-bottom: 1px solid var(--surface-2);
+      line-height: 1.5;
+    }
+
+    ul.doc-list li:last-child { border-bottom: none; }
+
+    ul.doc-list li::before {
+      content: '//';
+      position: absolute;
+      left: 0;
+      font-size: 10px;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 300;
+      top: 12px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── STATUS DOTS ── */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--secondary);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .dot-yes    { background: #5A8F6B; }
+    .dot-no     { background: #A86B6B; }
+    .dot-light  { background: var(--muted); }
+
+    /* ── PRINCIPLE BLOCK ── */
+    .principle {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .principle-text {
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      line-height: 1.4;
+      max-width: 680px;
+      font-style: italic;
+    }
+
+    .principle-source {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    /* ── AGENT CARD ── */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    .agent-card {
+      background: var(--black);
+      padding: 28px 24px;
+    }
+
+    .agent-num {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .agent-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .agent-io {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .agent-io-row {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    .io-label {
+      color: var(--muted);
+      min-width: 44px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-top: 1px;
+    }
+
+    .io-value { color: var(--secondary); line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-mark {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+    }
+
+    .footer-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .footer-right {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      nav .nav-links { display: none; }
+      section, .cover, footer { padding-left: 24px; padding-right: 24px; }
+      .grid-2, .grid-3, .grid-4, .agent-grid { grid-template-columns: 1fr; }
+      .pipeline, .pipeline-5 { grid-template-columns: 1fr 1fr; }
+      .cover-meta { flex-direction: column; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <span class="nav-mark">//</span>
+      <span class="nav-label">Intelligent Investing</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#positioning">Positioning</a></li>
+      <li><a href="#audience">Audience</a></li>
+      <li><a href="#channels">Channels</a></li>
+      <li><a href="#content">Content</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#funnel">Funnel</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#intelligence">Intelligence</a></li>
+      <li><a href="#measurement">Measurement</a></li>
+      <li><a href="#execution">Execution</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- COVER -->
+    <div class="cover">
+      <span class="cover-eyebrow">Intelligent Investing — Orion Digital Corp</span>
+      <div class="cover-mark">//</div>
+      <h1 class="cover-title">Marketing Strategy<br>2026</h1>
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Version</span>
+          <span class="cover-meta-value">1.0 — Initial</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Prepared</span>
+          <span class="cover-meta-value">Marketing Department</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Status</span>
+          <span class="cover-meta-value">For Review</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Classification</span>
+          <span class="cover-meta-value">Internal — Confidential</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 POSITIONING -->
+    <section id="positioning">
+      <span class="section-number">// 01</span>
+      <h2>What the brand<br>already has right</h2>
+
+      <p>The brand strategy built to date is <strong>genuinely strong</strong>. The SEVERE framework, the Cult Document, the Palantir-aligned positioning — most fintech companies never get this close to a coherent identity. The core line is real:</p>
+
+      <div class="principle">
+        <div class="principle-text">"We are not building an investing app.<br>We are building better investors."</div>
+        <div class="principle-source">intelligentinvesting.ai</div>
+      </div>
+
+      <p>The enemy is correctly defined. The identity offer is clear. The visual system is distinctive. The problem is not the brand.</p>
+
+      <p><strong>The problem is there is no funnel.</strong> We have doctrine without distribution — a philosophy without a mechanism for the right people to find it. That is what this strategy fixes.</p>
+
+      <div class="divider"></div>
+
+      <h3>The one tension to resolve</h3>
+
+      <div class="tension">
+        <div class="tension-label">Strategic Conflict</div>
+        <p>The SEVERE Marketing Strategy (February) states 1 post per week maximum, never more than 1 post in 7 days. The KARP Strategy (current) states 1 post per day.</p>
+        <br>
+        <p>These are not compatible. Daily posting will make this account look like every other finance account within 30 days. The SEVERE document has the better argument. The resolution: <strong>batch content production bi-weekly, publish selectively.</strong> Content is produced in concentrated sessions every two weeks — not daily. This creates a full queue without daily effort from the marketing function, while the publishing cadence remains controlled and intentional.</p>
+      </div>
+
+      <div class="callout">
+        <p><strong>The governing principle:</strong> "If marketing does not increase desirability, we do not do it. We are not indifferent to uptake. We are indifferent to uptake that does not compound."</p>
+      </div>
+    </section>
+
+    <!-- 02 AUDIENCE -->
+    <section id="audience">
+      <span class="section-number">// 02</span>
+      <h2>Who this is<br>actually for</h2>
+
+      <p>The strategy documents describe the target audience correctly in philosophy but not precisely enough for distribution. Precision matters because every channel decision, content decision, and tone decision depends on knowing exactly who you are speaking to.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-label">Primary</span>
+          <div class="card-title">The Aspirational Disciplined Investor</div>
+          <div class="card-body">28–45 years old. Has investable capital but feels they're making mistakes they cannot name. Distrusts their own impulses. Reads about investing but gets noise, not signal. Self-identifies as serious — not as a trader or retail investor. Responds to being respected, not coached.</div>
+          <span class="card-tag tag-primary">Target</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Secondary</span>
+          <div class="card-title">The Frustrated Professional</div>
+          <div class="card-body">Has money. Has financial literacy. Has been burned by complexity. Wants a system they can trust and stop thinking about. Would describe Intelligent Investing to a colleague as: "it's the serious version."</div>
+          <span class="card-tag tag-secondary">Target</span>
+        </div>
+      </div>
+
+      <h3>Who this is not for</h3>
+      <ul class="doc-list">
+        <li>Day traders, crypto enthusiasts, people who want excitement</li>
+        <li>People who need constant reassurance during volatility</li>
+        <li>People who want a community, a coach, or a forum</li>
+        <li>Anyone who would describe good investing as "making moves"</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Why this matters for channel selection:</strong> The primary audience is on Instagram (consuming, not only posting), on LinkedIn professionally, and reads long-form newsletters. They are not primarily on X/Twitter anymore, and they are definitively not on TikTok.</p>
+      </div>
+    </section>
+
+    <!-- 03 CHANNELS -->
+    <section id="channels">
+      <span class="section-number">// 03</span>
+      <h2>Channel architecture</h2>
+
+      <p>The original strategy documents recommend X/Twitter as the primary signal channel. This recommendation is revised. X's algorithm has become less predictable, organic reach has dropped for non-viral content, and the platform competes with crypto speculation and market noise — precisely what this brand stands against. The serious investor this brand targets has largely migrated.</p>
+
+      <p><strong>The channel the strategy documents ignore entirely: LinkedIn.</strong> This is a mistake that this strategy corrects. A post stating "Most investors underperform because they cannot sit still" lands with entirely different authority on LinkedIn — surrounded by professional context — than it does on X surrounded by chaos.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Role</th>
+            <th>Cadence</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Instagram</td>
+            <td>Primary reach and discovery. Reels algorithm provides substantial organic distribution. Carousels build saves and depth. The visual brand system translates directly here.</td>
+            <td>3 Reels + 1 Carousel + 1 Static / week<br><span style="color:var(--muted);font-size:12px;">Alt: 3 Reels + 2 Carousels</span></td>
+            <td><span class="status"><span class="dot dot-yes"></span>Active — Primary</span></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td>Primary credibility and conversion. The exact target audience — finance professionals, serious investors — is here. The SEVERE voice fits the professional context. Text posts and document carousels perform well without algorithm manipulation.</td>
+            <td>3–4 posts / week</td>
+            <td><span class="status"><span class="dot dot-yes"></span>Active — Primary</span></td>
+          </tr>
+          <tr>
+            <td>Email — The Edge</td>
+            <td>Primary conversion mechanism. Converts consideration to conviction before the product. The single most important channel for turning awareness into paying users. One idea per email. Timeless. No greeting. No sign-off implying conversation.</td>
+            <td>Weekly (skippable)</td>
+            <td><span class="status"><span class="dot dot-yes"></span>Active — Critical</span></td>
+          </tr>
+          <tr>
+            <td>X / Twitter</td>
+            <td>Secondary presence only. Mirror LinkedIn posts occasionally. Do not build content specifically for this channel. Exists so the brand is findable and looks intentional.</td>
+            <td>1–2 × / week (mirrored)</td>
+            <td><span class="status"><span class="dot dot-light"></span>Presence Only</span></td>
+          </tr>
+          <tr>
+            <td>TikTok</td>
+            <td>No presence. TikTok requires performance, rewards immediacy, and is optimised for stimulation. Being absent is a feature, not an omission.</td>
+            <td>—</td>
+            <td><span class="status"><span class="dot dot-no"></span>Never</span></td>
+          </tr>
+          <tr>
+            <td>YouTube / Threads / Reddit</td>
+            <td>Never. These either require volume to survive or are conversation-first environments. Entering half-heartedly damages the brand more than absence.</td>
+            <td>—</td>
+            <td><span class="status"><span class="dot dot-no"></span>Never</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p><strong>The governing channel rule:</strong> We do not add channels to increase reach. We only add channels if silence on them would look accidental.</p>
+      </div>
+    </section>
+
+    <!-- 04 CONTENT -->
+    <section id="content">
+      <span class="section-number">// 04</span>
+      <h2>Content strategy</h2>
+
+      <p>The four-category content architecture from the KARP Strategy is correct and is retained. Every piece of content belongs to one of these categories and follows the three-part post structure: Hard Claim → System Explanation → Correction.</p>
+
+      <div class="grid-4">
+        <div class="card">
+          <span class="card-label">Category 01</span>
+          <div class="card-title">System Failure</div>
+          <div class="card-body">Expose the industry. The system rewards behaviour that destroys returns. Name it without apology.</div>
+        </div>
+        <div class="card">
+          <span class="card-label">Category 02</span>
+          <div class="card-title">Behavioural Edge</div>
+          <div class="card-body">Rewire thinking. Address the psychological patterns that produce underperformance. Not advice. Diagnosis.</div>
+        </div>
+        <div class="card">
+          <span class="card-label">Category 03</span>
+          <div class="card-title">Capital Discipline</div>
+          <div class="card-body">What to actually do. Concrete. Uncomfortable. Non-consensus. Not a tip. A position.</div>
+        </div>
+        <div class="card">
+          <span class="card-label">Category 04</span>
+          <div class="card-title">Identity</div>
+          <div class="card-body">Who this is for. Filter content. Repel the wrong audience. Attract the rare investor who recognises themselves.</div>
+        </div>
+      </div>
+
+      <h3>Content formats and their purpose</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Channel</th>
+            <th>Purpose</th>
+            <th>Frequency</th>
+            <th>Who executes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reels</td>
+            <td>Instagram</td>
+            <td>Discovery and reach. The algorithm distributes Reels to non-followers. Primary mechanism for audience growth. Black/white, text-only animation — severe aesthetic, not entertainment aesthetic.</td>
+            <td>3 × / week</td>
+            <td>Agent → Claude Design → Polish</td>
+          </tr>
+          <tr>
+            <td>Carousels</td>
+            <td>Instagram + LinkedIn</td>
+            <td>Depth and saves. The highest-saved format. Takes a single idea from the post structure and expands it across 5–7 slides. Becomes a brand artefact people return to.</td>
+            <td>1–2 × / week</td>
+            <td>Agent → Claude Design or Figma</td>
+          </tr>
+          <tr>
+            <td>Static Post</td>
+            <td>Instagram</td>
+            <td>Brand statement. Single truth. Institutional. Used sparingly so it retains weight when it appears.</td>
+            <td>1 × / week</td>
+            <td>Agent → Claude Design</td>
+          </tr>
+          <tr>
+            <td>Text Post</td>
+            <td>LinkedIn</td>
+            <td>Thought leadership and direct distribution to professional audience. Longer first line than Instagram. Same philosophy, calibrated for professional context.</td>
+            <td>3–4 × / week</td>
+            <td>Agent (adapted from Instagram concepts)</td>
+          </tr>
+          <tr>
+            <td>The Edge</td>
+            <td>Email</td>
+            <td>One idea. Timeless. Reads like internal correspondence. No greeting. Ends with a principle, not a goodbye. Converts consideration to conviction.</td>
+            <td>Weekly</td>
+            <td>Agent → Light editorial review</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The Reel production workflow</h3>
+      <p>This workflow already exists in practice. The agent reduces effort at the front end so the judgment steps — the ones that must remain human — get more attention, not less.</p>
+
+      <div class="pipeline pipeline-5">
+        <div class="pipeline-week">
+          <div class="pipeline-label">Step 01</div>
+          <div class="pipeline-title">Agent generates</div>
+          <ul class="pipeline-items">
+            <li>Concept + hard claim</li>
+            <li>Full 3-part copy</li>
+            <li>Visual brief for Claude Design</li>
+            <li>Midjourney image brief (if B&W photo reel)</li>
+            <li>Caption copy</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Step 02</div>
+          <div class="pipeline-title">Human reviews</div>
+          <ul class="pipeline-items">
+            <li>Review concepts (15 min batch)</li>
+            <li>Approve or flag</li>
+            <li>Generate Midjourney image if needed</li>
+            <li>Bring brief to Claude Design</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Step 03</div>
+          <div class="pipeline-title">Claude Design produces</div>
+          <ul class="pipeline-items">
+            <li>3 visual / animation options</li>
+            <li>CEO + Marketing select one</li>
+            <li>Light polish applied</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Step 04</div>
+          <div class="pipeline-title">Compliance + Schedule</div>
+          <ul class="pipeline-items">
+            <li>Submit to compliance</li>
+            <li>Schedule upon approval</li>
+            <li>Publish</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Step 05</div>
+          <div class="pipeline-title">Agent analyses results</div>
+          <ul class="pipeline-items">
+            <li>Saves, reach, profile visits</li>
+            <li>Which categories performed</li>
+            <li>Which visual mode resonated</li>
+            <li>Feeds insights back to Step 01</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>On visual tone for Reels:</strong> Two modes. The default is black background with white text appearing sequentially — institutional, severe, no music. For a portion of Reels, documentary-style black and white photography is used as background — still images generated in Midjourney using a visual brief produced by the content agent. The agent specifies what image to generate (composition, subject, mood) so the Midjourney prompt is already written. White text overlaid on the photograph. Both modes maintain the same visual severity — the image is never the point, the statement is.</p>
+      </div>
+    </section>
+
+    <!-- 05 PIPELINE -->
+    <section id="pipeline">
+      <span class="section-number">// 05</span>
+      <h2>The compliance pipeline</h2>
+
+      <p>All content requires compliance review before publication. This is a non-negotiable constraint that defines the entire production rhythm. Content cannot be created on the same week it publishes. The minimum viable buffer is <strong>two weeks ahead at all times.</strong></p>
+
+      <div class="pipeline">
+        <div class="pipeline-week">
+          <div class="pipeline-label">Week A — Production</div>
+          <div class="pipeline-title">Generate Week C content</div>
+          <ul class="pipeline-items">
+            <li>Agent generates full week</li>
+            <li>Marketing reviews + approves</li>
+            <li>Visuals executed in Claude Design</li>
+            <li>Submit to compliance by Friday</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Week B — Review</div>
+          <div class="pipeline-title">Week C in compliance</div>
+          <ul class="pipeline-items">
+            <li>Week C under review</li>
+            <li>Generate Week D content in parallel</li>
+            <li>Execute visuals for Week D</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Week C — Publish</div>
+          <div class="pipeline-title">Week C goes live</div>
+          <ul class="pipeline-items">
+            <li>Compliance-approved content scheduled</li>
+            <li>Week E now in production</li>
+            <li>Queue never runs dry</li>
+          </ul>
+        </div>
+        <div class="pipeline-week">
+          <div class="pipeline-label">Airtable</div>
+          <div class="pipeline-title">Pipeline tracker</div>
+          <ul class="pipeline-items">
+            <li>Draft → Review → Approved</li>
+            <li>Scheduled → Published</li>
+            <li>Compliance dates tracked</li>
+            <li>Format + channel logged</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Recommended production cadence</h3>
+      <p>Rather than weekly production sessions, produce in <strong>bi-weekly batches</strong>. One two-hour session every two weeks generates all content for the following two publish weeks. This reduces context-switching, allows better thematic coherence, and ensures the compliance queue is always full with buffer.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Output</th>
+            <th>Effort (Marketing)</th>
+            <th>Effort (CEO)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bi-weekly batch (2 hrs)</td>
+            <td>14 days of content across all formats and channels</td>
+            <td>30 min review + visual execution in Claude Design</td>
+            <td>Pick 1 of 3 Reel options per concept</td>
+          </tr>
+          <tr>
+            <td>Compliance submission</td>
+            <td>Week 1 batch submitted</td>
+            <td>15 min admin</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>Scheduling</td>
+            <td>Approved content scheduled across platforms</td>
+            <td>20 min</td>
+            <td>None</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 06 FUNNEL -->
+    <section id="funnel">
+      <span class="section-number">// 06</span>
+      <h2>The funnel</h2>
+
+      <p>Currently, there is no clear funnel architecture. There is a brand and a product, but no defined mechanism for moving someone from "never heard of this" to "paying subscriber." The critical missing piece is the bridge between consideration and conviction — that bridge is <strong>The Edge newsletter.</strong></p>
+
+      <div class="funnel">
+        <div class="funnel-step">
+          <span class="funnel-num">01</span>
+          <div class="funnel-content">
+            <div class="funnel-stage">Awareness</div>
+            <div class="funnel-desc">A Reel, a LinkedIn post, or a mirrored X post reaches someone who fits the profile. They stop scrolling.</div>
+            <span class="funnel-channel">Instagram Reels · LinkedIn · X</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <span class="funnel-num">02</span>
+          <div class="funnel-content">
+            <div class="funnel-stage">Recognition</div>
+            <div class="funnel-desc">Something they read stops them. They recognise themselves in it. They check the account. They read more.</div>
+            <span class="funnel-channel">Account profile · Carousels · Archive</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <span class="funnel-num">03</span>
+          <div class="funnel-content">
+            <div class="funnel-stage">Consideration</div>
+            <div class="funnel-desc">They visit the website. They find the philosophy. They find the Constraints page. They read "Proceed Deliberately."</div>
+            <span class="funnel-channel">intelligentinvesting.ai · Constraints page</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <span class="funnel-num">04</span>
+          <div class="funnel-content">
+            <div class="funnel-stage">Conviction</div>
+            <div class="funnel-desc">They subscribe to The Edge — free, frictionless. Over 4 editions they begin thinking of themselves as an II-type investor. Identity is pre-committed before the product.</div>
+            <span class="funnel-channel">The Edge newsletter — free entry point</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <span class="funnel-num">05</span>
+          <div class="funnel-content">
+            <div class="funnel-stage">Conversion</div>
+            <div class="funnel-desc">Signing up for the product formalises what they already believe about themselves. $20/month. No friction required — the identity did the work.</div>
+            <span class="funnel-channel">App — Managed or Self-directed</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <span class="funnel-num">06</span>
+          <div class="funnel-content">
+            <div class="funnel-stage">Advocacy</div>
+            <div class="funnel-desc">No referral incentives. They send it to one person who is exactly like them. That is the only referral that compounds.</div>
+            <span class="funnel-channel">Silent referral — identity recognition</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>The two website additions required immediately</h3>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-label">Addition 01</span>
+          <div class="card-title">The Constraints Page</div>
+          <div class="card-body">A public "What We Don't Do" page. This is the highest-ROI addition to the website. Sophisticated investors who land on it immediately feel seen. It converts trust faster than any feature page.</div>
+          <span class="card-tag tag-primary">Build now</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Addition 02</span>
+          <div class="card-title">The Edge Signup Path</div>
+          <div class="card-body">The current homepage leads only to the app. There must be a second path: "Read The Edge." A free, low-friction entry point that captures the consideration audience before they are ready to commit $20/month.</div>
+          <span class="card-tag tag-primary">Build now</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 AGENTS -->
+    <section id="agents">
+      <span class="section-number">// 07</span>
+      <h2>AI agents</h2>
+
+      <p>Each channel has distinct content requirements. A single agent producing copy for all channels will produce generic output. The architecture below assigns one agent per content function, each trained on the brand voice and the specific format conventions of its channel.</p>
+
+      <div class="agent-grid">
+        <div class="agent-card">
+          <span class="agent-num">Agent 01</span>
+          <div class="agent-name">Content Concept Engine</div>
+          <div class="card-body">Generates weekly batch of concepts across all four categories. The upstream source that feeds all other agents.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Category, week number, topic constraints</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">7–10 concepts with core idea, hard claim, and one-line brief each</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 02</span>
+          <div class="agent-name">Instagram Reel Writer</div>
+          <div class="card-body">Takes a concept and produces the full Reel brief — script, visual direction for Claude Design, and caption.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Concept from Agent 01</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Opening claim, 3-part body, visual brief, caption copy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 03</span>
+          <div class="agent-name">Carousel Writer</div>
+          <div class="card-body">Expands a single idea across 5–7 slides. Works for both Instagram and LinkedIn document format. Slide-by-slide copy, ready for Claude Design or Figma.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Concept from Agent 01</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Cover slide + 5–7 body slides + closing slide, with copy for each</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 04</span>
+          <div class="agent-name">LinkedIn Adaptor</div>
+          <div class="card-body">Takes the same concept used for Instagram and produces a LinkedIn-native version. Same idea, calibrated for professional context — longer opening, slightly more grounded, same severity.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Instagram concept + caption from Agent 02</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">LinkedIn post copy — no hashtags, ends with a principle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 05</span>
+          <div class="agent-name">The Edge Newsletter Writer</div>
+          <div class="card-body">Drafts a weekly newsletter edition. One idea. Timeless. No greeting. No sign-off implying conversation. Ends with a principle. Feels like internal correspondence, not a newsletter.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Weekly topic from a rolling 12-week topic map</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Subject line + full body + closing signature. ~200–300 words.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 06</span>
+          <div class="agent-name">Braze Automation</div>
+          <div class="card-body">Handles The Edge send automatically once the newsletter copy is approved. Connects to the Braze REST API. Zero manual effort after setup. Requires Braze API key with send permissions.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Approved newsletter copy + send date</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Automated send to full subscriber list via Braze</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 07</span>
+          <div class="agent-name">Performance &amp; Insights Analyst</div>
+          <div class="card-body">Pulls performance data weekly from Instagram and LinkedIn. Analyses what is working — by content category, by visual mode (black background vs. documentary B&W photo), by format. Produces a concise insight brief and feeds recommendations directly back to the Content Concept Engine (Agent 01). Marketing does not review raw metrics. The agent translates data into production decisions.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Instagram Graph API + LinkedIn API — saves, reach, profile visits, follower quality signals</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Weekly Slack brief every Monday 8am. Top performers by category, visual mode comparison, format breakdown, production recommendation for next batch. Logged to Airtable.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 08</span>
+          <div class="agent-name">Competitor Intelligence</div>
+          <div class="card-body">Scans competitor social accounts, messaging, content formats, and product positioning bi-weekly. Output is not content inspiration — it is positioning awareness. Two sections only: what the field is crowded on, and where the white space is. Informs what to avoid, not what to do.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Competitor Instagram, LinkedIn accounts + web — Wealthsimple, Betterment, Robinhood, relevant finance content creators</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Bi-weekly Slack brief (1st and 3rd Monday of month). What the field is crowded on. Where the white space is. Action required or not.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 09</span>
+          <div class="agent-name">Market Scanner</div>
+          <div class="card-body">Scans market conditions weekly through a structural lens — not news, not events, but persistent patterns that confirm or challenge the brand's thesis. Output always answers one question: does current market behaviour validate our positioning? The answer is almost always yes. That consistency is the point — it trains the team that the philosophy holds across conditions, and pre-empts reactive content decisions.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Financial market data, retail trading volume signals, macro indicators — filtered through a structural pattern lens, not a news lens</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Weekly Slack brief every Friday morning. One structural observation. Noise filter verdict. Whether current conditions feed into next content batch. Never reactive.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-num">Agent 10</span>
+          <div class="agent-name">Social Format Intelligence</div>
+          <div class="card-body">Monitors what formats, lengths, and distribution patterns are performing for non-entertainment accounts in the finance and investing category. Output is structural only — never content inspiration, never trend-chasing. Answers: how should we structure and distribute what we have already decided to say.</div>
+          <div class="agent-io">
+            <div class="agent-io-row">
+              <span class="io-label">Input</span>
+              <span class="io-value">Instagram Insights API, LinkedIn analytics — Reel length performance, carousel save rates, posting window data, format benchmarks by category</span>
+            </div>
+            <div class="agent-io-row">
+              <span class="io-label">Output</span>
+              <span class="io-value">Bi-weekly Slack brief (alternating Mondays with Agent 08). Format recommendations only — length, timing, slide count. Explicit list of what to ignore.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 08 INTELLIGENCE CHANNEL -->
+    <section id="intelligence">
+      <span class="section-number">// 08</span>
+      <h2>The intelligence channel</h2>
+
+      <p>All four intelligence agents (07–10) deliver their output to a single Slack channel: <strong>#ii-marketing-intel</strong>. CEO and marketing are the only members. It is not a conversation channel — it is a briefing channel. Agents post, humans read.</p>
+
+      <p>This exists for two reasons. The first is operational: all performance, competitive, market, and format intelligence is consolidated in one place, always current, never requiring a meeting or a status request. The second is strategic: <strong>a CEO who receives structured weekly briefs does not need to ask for updates.</strong> The briefs answer the question before it is asked. Over time, the consistent message — our thesis holds, no reactive action required — conditions the right response to market pressure.</p>
+
+      <div class="callout">
+        <p><strong>Setup required:</strong> One Slack Incoming Webhook URL (5 minutes to create in Slack workspace settings). No MCP connector needed. Agents POST directly to the webhook. The webhook URL is added to agent configuration once and never touched again.</p>
+      </div>
+
+      <h3>Delivery schedule</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Brief</th>
+            <th>Frequency</th>
+            <th>Delivery</th>
+            <th>Why this cadence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agent 07</td>
+            <td>Performance Brief</td>
+            <td>Weekly</td>
+            <td>Monday 8am</td>
+            <td>Feeds directly into the bi-weekly production session. CEO sees results before the week begins.</td>
+          </tr>
+          <tr>
+            <td>Agent 08</td>
+            <td>Competitor Brief</td>
+            <td>Bi-weekly</td>
+            <td>1st and 3rd Monday</td>
+            <td>Competitors move fast enough that monthly leaves gaps. Bi-weekly keeps the CEO feeling the field is watched.</td>
+          </tr>
+          <tr>
+            <td>Agent 09</td>
+            <td>Market Brief</td>
+            <td>Weekly</td>
+            <td>Friday morning</td>
+            <td>CEO goes into the weekend informed. Weekly frequency trains the expectation that the answer is usually "hold" — over time this reduces reactive pressure, not increases it.</td>
+          </tr>
+          <tr>
+            <td>Agent 10</td>
+            <td>Social Format Brief</td>
+            <td>Bi-weekly</td>
+            <td>2nd and 4th Monday</td>
+            <td>Alternates with Agent 08 so Mondays always have an intelligence brief. Format data moves slowly enough that bi-weekly is sufficient.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Brief formats</h3>
+      <p>Each brief is structured identically: context, observation, recommendation, noise filter verdict. Clean. No preamble. No sign-off implying conversation. Reads like an internal memo, not a notification.</p>
+
+      <div class="grid-2">
+        <div class="card" style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.7;">
+          <span class="card-label">Agent 07 — Monday 8am</span>
+          <div style="color: var(--accent); margin-bottom: 8px; font-size: 11px; letter-spacing: 2px;">PERFORMANCE BRIEF // WEEK OF 12 MAY</div>
+          <div style="color: var(--secondary);">
+            INSTAGRAM<br>
+            Top category: System Failure<br>
+            Best format: Reel — documentary B&W<br>
+            Saves this week: 47 ↑12%<br>
+            <br>
+            LINKEDIN<br>
+            Top performer: Behavioural Edge<br>
+            New professional followers: 6<br>
+            <br>
+            THE EDGE<br>
+            Open rate: 34% (benchmark: 28%)<br>
+            New subscribers: 8<br>
+            <br>
+            <span style="color: var(--white);">NEXT BATCH</span><br>
+            Prioritise System Failure.<br>
+            Continue documentary B&W.<br>
+            Trim carousels to 5 slides.
+          </div>
+        </div>
+
+        <div class="card" style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.7;">
+          <span class="card-label">Agent 09 — Friday morning</span>
+          <div style="color: var(--accent); margin-bottom: 8px; font-size: 11px; letter-spacing: 2px;">MARKET BRIEF // 16 MAY</div>
+          <div style="color: var(--secondary);">
+            STRUCTURAL OBSERVATION<br>
+            Retail trading volume elevated<br>
+            for 8 consecutive weeks.<br>
+            <br>
+            Historically, sustained elevated<br>
+            activity precedes underperformance<br>
+            — not from market conditions,<br>
+            from behavioural drift.<br>
+            <br>
+            This confirms our thesis.<br>
+            <br>
+            CONTENT RELEVANCE<br>
+            System Failure + Behavioural Edge<br>
+            categories directly applicable.<br>
+            No reactive content warranted.<br>
+            <br>
+            <span style="color: var(--white);">NOISE FILTER</span><br>
+            No action required this week.
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.7;">
+          <span class="card-label">Agent 08 — Bi-weekly Monday</span>
+          <div style="color: var(--accent); margin-bottom: 8px; font-size: 11px; letter-spacing: 2px;">COMPETITOR BRIEF // MAY W1</div>
+          <div style="color: var(--secondary);">
+            WHAT THE FIELD IS CROWDED ON<br>
+            Accessible investing language.<br>
+            Educational carousels.<br>
+            Warm, motivational tone.<br>
+            "Stop doing this" hooks.<br>
+            <br>
+            WHERE THE WHITE SPACE IS<br>
+            Severe, institutional voice:<br>
+            uncontested.<br>
+            Naming the industry as enemy:<br>
+            uncontested.<br>
+            <br>
+            <span style="color: var(--white);">ACTION REQUIRED</span><br>
+            None. Hold position.
+          </div>
+        </div>
+
+        <div class="card" style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.7;">
+          <span class="card-label">Agent 10 — Bi-weekly Monday</span>
+          <div style="color: var(--accent); margin-bottom: 8px; font-size: 11px; letter-spacing: 2px;">FORMAT BRIEF // MAY W2</div>
+          <div style="color: var(--secondary);">
+            FORMAT INTELLIGENCE<br>
+            Reels 25–40 sec: 3.1× reach<br>
+            vs. 60 sec in your category.<br>
+            Carousels: 5–6 slides optimal.<br>
+            Window: Tue–Thu 7–9pm.<br>
+            Captions under 80 words.<br>
+            <br>
+            WHAT TO IGNORE<br>
+            Trending audio: irrelevant.<br>
+            Hook formats: incompatible.<br>
+            <br>
+            <span style="color: var(--white);">RECOMMENDATION</span><br>
+            Keep Reels at 25–35 sec.<br>
+            Shift to Tue–Thu evening.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 09 MEASUREMENT -->
+    <section id="measurement">
+      <span class="section-number">// 09</span>
+      <h2>Measurement</h2>
+
+      <p>Measurement is handled by Agent 07 — not by the marketing function. The agent pulls data, translates it into production decisions, and logs everything to Airtable. Marketing receives a brief, not a dashboard. The metrics that matter are slower, harder to fake, and directly correlated with revenue — they require interpretation, not observation.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>What to ignore</th>
+            <th>What to measure instead</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Follower count</td>
+            <td>Quality of new followers — are they finance professionals, serious investors?</td>
+            <td>100 right-fit followers outperform 10,000 wrong ones in every conversion metric</td>
+          </tr>
+          <tr>
+            <td>Post engagement rate</td>
+            <td>Saves and silent follows. Low comment volume is a signal of correctness.</td>
+            <td>The right audience saves. The wrong audience comments. High comment volume is a red flag.</td>
+          </tr>
+          <tr>
+            <td>Website traffic volume</td>
+            <td>Time on site. Pages per session. Edge newsletter signups.</td>
+            <td>A serious investor reads the Constraints page, the philosophy, and then subscribes to The Edge. That journey takes time.</td>
+          </tr>
+          <tr>
+            <td>App downloads</td>
+            <td>90-day retention rate and behaviour during drawdowns</td>
+            <td>Downloads measure marketing. Retention measures whether the brand promise is real.</td>
+          </tr>
+          <tr>
+            <td>Email open rate</td>
+            <td>Conversion rate from Edge subscriber to paid user</td>
+            <td>The Edge's purpose is to pre-commit identity, then convert. Open rate is vanity. Conversion is signal.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The three milestones that confirm the strategy is working</h3>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-label">30–90 Days</span>
+          <div class="card-title">The right people are following</div>
+          <div class="card-body">New followers include finance professionals, institutional-adjacent investors, and people who describe themselves as long-term. Edge subscribers are growing without paid promotion.</div>
+        </div>
+        <div class="card">
+          <span class="card-label">3–6 Months</span>
+          <div class="card-title">Referrals without incentives</div>
+          <div class="card-body">Users forward The Edge with the message "made me think of you." Paid subscribers are staying past 90 days. People describe the platform accurately on their own.</div>
+        </div>
+        <div class="card">
+          <span class="card-label">6–18 Months</span>
+          <div class="card-title">The language is adopted</div>
+          <div class="card-body">People quote the brand's language back. Users describe the platform as "calming" or "different." Sophisticated investors stop asking about features.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 EXECUTION -->
+    <section id="execution">
+      <span class="section-number">// 10</span>
+      <h2>90-day execution plan</h2>
+
+      <p>The plan below is sequenced for minimum effort from the marketing function while building a system that runs without constant intervention. The first four weeks require the most concentrated effort. After that, the pipeline runs on batch production cycles.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Weeks</th>
+            <th>Priority</th>
+            <th>Output</th>
+            <th>Who</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1–2</td>
+            <td>Foundation</td>
+            <td>Build 4-week content library across all formats. Add Constraints page to website. Add Edge newsletter signup to homepage. Configure Airtable compliance pipeline tracker.</td>
+            <td>Marketing + Dev</td>
+          </tr>
+          <tr>
+            <td>3–4</td>
+            <td>First compliance cycle</td>
+            <td>Submit first 2 weeks of content to compliance. Execute visuals in Claude Design while under review. Publish Week 1 once approved.</td>
+            <td>Marketing</td>
+          </tr>
+          <tr>
+            <td>5–8</td>
+            <td>Rhythm</td>
+            <td>Bi-weekly batch production. Compliance cycle running. Reels, Carousels, LinkedIn, The Edge all live. Monitor quality of new followers and Edge signup rate.</td>
+            <td>Marketing (agent-assisted)</td>
+          </tr>
+          <tr>
+            <td>9–12</td>
+            <td>Review + refill</td>
+            <td>Audit first 8 weeks. Who is following? Are Reels reaching new people? Are Edge subscribers converting to paid? Refill content queue for next 4 weeks.</td>
+            <td>Marketing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p><strong>Starting point:</strong> Before building any agents, the most useful immediate action is to produce the first four weeks of content in one session — so the compliance queue is full before the system needs to run on its own. All agents can be built in parallel.</p>
+      </div>
+    </section>
+
+    <!-- CLOSING PRINCIPLE -->
+    <section>
+      <div class="principle">
+        <div class="principle-text">The brand strategy is right.<br>The missing piece is infrastructure<br>for the right people to find it.</div>
+        <div class="principle-source">Intelligent Investing — Marketing</div>
+      </div>
+
+      <ul class="doc-list">
+        <li>Desirability is the scarcest asset. It is not increased by doing more. It is increased by refusing what dilutes it.</li>
+        <li>Content that improves engagement but degrades discipline fails.</li>
+        <li>Half-severe execution is worse than no execution.</li>
+        <li>Silence only works if it is earned. Earn it first.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <span class="footer-mark">//</span>
+      <span class="footer-label">Intelligent Investing</span>
+    </div>
+    <span class="footer-right">Marketing Strategy — Confidential — 2026</span>
+  </footer>
+
+</body>
+</html>
